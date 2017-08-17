@@ -1,6 +1,7 @@
 class ObjLoader:
+
 	def __init__(self, filePath):
-		if(os.path.exists(filePath) && os.path.isfile(filePath)):
+		if os.path.exists(filePath) and os.path.isfile(filePath):
 			self.file = filePath
 
 	def load(self):

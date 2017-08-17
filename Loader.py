@@ -4,26 +4,22 @@ class Loader:
 	
 	files = [];
 
-	def __init__(self, filePath):
-		if(os.path.exists(filePath)):
-			if(os.path.isdir(filePath)):
-				self.dir = filePath
-			elif(os.path.isfile(filePath)):
-				self.file = filePath
-
-	def loader(self, path):
-		if(os.path.isdir(path)):
+	def load(self, path):
+		if os.path.isdir(path):
 			pathDir =  os.listdir(path)
-    		for path in pathDir:
-        		child = os.path.join('%s%s' % (filepath, path))
-        		if(os.path.isdir(child)):
-        			childrenFiles = self.loader(path)
-        		elif(os.path.isfile(child)):
-        			self.files.append(child);		
+    		for childPath in pathDir:
+        		child = os.path.join('%s%s' % (path, childPath))
+        		if os.path.isdir(child):
+        			childrenFiles = self.loader(child)
+        		elif os.path.isfile(child):
+        			self.files.append(child) 
+        		else :
+        			continue
 
-        	return self.files
-		elif(os.path.isfile(path)):
+		else :
+			self.files.append(path)
+		
+		return self.files
 
 
-	def loadFilePath(self):
 		
