@@ -4,6 +4,7 @@ from OpenGL.GLUT import *
 from sys import argv
 from Loader import Loader
 from ObjLoader import ObjLoader
+from QEM import QEM
 
 script,filePath = argv
 
@@ -15,4 +16,7 @@ files = loader.load(filePath);
 
 objLoader = ObjLoader("./models/123.obj");
 fileContent = objLoader.load();
-print fileContent
+
+
+qem = QEM()
+qem.toLowPloy(fileContent)
