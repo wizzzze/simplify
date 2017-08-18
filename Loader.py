@@ -19,6 +19,7 @@ class Loader:
 		else :
 			self.files.append(path)
 		
+
 		return self.files
 
 

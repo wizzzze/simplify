@@ -3,7 +3,7 @@ import os
 class ObjLoader:
 
 	def __init__(self, filePath):
-		# if os.path.exists(filePath) and os.path.isfile(filePath):
+		if os.path.exists(filePath) and os.path.isfile(filePath):
 			self.file = filePath
 
 	def load(self):
@@ -16,24 +16,20 @@ class ObjLoader:
 		uvs = []
 
 		for line in lines:
-		    temp = line.split(" ")
+		    temp = line.strip('\n')
+		    temp = temp.split(' ')
 		    if temp:
 				if temp[0] == "v":
-					vectors.append(temp[2])
-					vectors.append(temp[3])
-					vectors.append(temp[4])
+					vectors.append([temp[2], temp[3], temp[4]])
 				elif temp[0] == "f":
-					faces.append(temp[2].split("/"))
-					faces.append(temp[3].split("/"))
-					faces.append(temp[4].split("/"))
+					face = [temp[1].split("/"), temp[2].split("/"), temp[3].split("/")]
+					faces.append(face)
 				elif temp[0] == "vn":
-					normals.append(temp[2])
-					normals.append(temp[3])
-					normals.append(temp[4])
+					normal = [temp[1], temp[2], temp[3]]
+					normals.append(normal)
 				elif temp[0] == "vt":
-					uvs.append(temp[2])
-					uvs.append(temp[3])
-					uvs.append(temp[4])
+					uv = [temp[1], temp[2], temp[3]]
+					uvs.append(uv)
 
 
 		return {
