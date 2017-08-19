@@ -1,7 +1,12 @@
+from numpy import *
+
 class QEM:
 
 	wightOrder = []
 	def toLowPloy(self, data):
+
+		vCount = len(data['vectors'])
+		lowCount = vCount/10
 
 		flength = len(data['faces'])
 		fi = 0;
@@ -21,7 +26,7 @@ class QEM:
 		
 		for vi in reverseIndex:
 			faces = reverseIndex[vi]
-			
+
 
 
 
