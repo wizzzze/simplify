@@ -38,15 +38,18 @@ class QEM:
 			ppT = self.computerPPT(face, ppT);
 
 
-			
+		
+	
+
 
 	def computerPPT(tri , ppT) :
-		Point norm = prod(self.vecteies[tri.poin[1]] - self.vecteies[tri.point[0]], self.vecteies[tri.point[2]] - self.vecteies[tri.point[0]]);
+		norm = Vectex.prod(self.vecteies[tri.poin[1]].minus(self.vecteies[tri.point[0]]), self.vecteies[tri.point[2]].minus(self.vecteies[tri.point[0]]));
 		norm.normalize();
-		double p[4] = {norm.x, norm.y, norm.z, dot(norm, *(tri->p[0])) * (-1)};
-		for(int i = 0; i < 4; i++for(int j = 0; j < 4; j++) { 
-			a[i][j] = p[i] * p[j];
-		}
+		p = [norm.x, norm.y, norm.z, Vectex.dot(norm, *(tri.point[0])) * (-1)];
+		for i in p:
+			for j in p 
+				ppT[i][j] = p[i] * p[j];
+		
 
 
 
