@@ -1,5 +1,7 @@
 import os
 import re
+from Vectex import Vectex 
+from Tri import Tri 
 
 class ObjLoader:
 

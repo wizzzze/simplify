@@ -2,9 +2,12 @@ from numpy import *
 
 class QEM:
 
+	vecteies
+
 	def toLowPloy(self, data):
 
 		vCount = len(data['vecteies'])
+		self.vecteies = data['vecteies']
 		lowCount = vCount/10
 
 		flength = len(data['faces'])
@@ -23,10 +26,27 @@ class QEM:
 
 		
 		
-		for vi in reverseIndex:
-			faces = reverseIndex[vi]
+		for face in data['faces']:
+			n,m = 0
+			ppT = [
+				[0,0,0,0],
+				[0,0,0,0],
+				[0,0,0,0],
+				[0,0,0,0]
+			]
+		
+			ppT = self.computerPPT(face, ppT);
 
 
+			
+
+	def computerPPT(tri , ppT) :
+		Point norm = prod(self.vecteies[tri.poin[1]] - self.vecteies[tri.point[0]], self.vecteies[tri.point[2]] - self.vecteies[tri.point[0]]);
+		norm.normalize();
+		double p[4] = {norm.x, norm.y, norm.z, dot(norm, *(tri->p[0])) * (-1)};
+		for(int i = 0; i < 4; i++for(int j = 0; j < 4; j++) { 
+			a[i][j] = p[i] * p[j];
+		}
 
 
 
