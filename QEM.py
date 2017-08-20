@@ -2,10 +2,9 @@ from numpy import *
 
 class QEM:
 
-	wightOrder = []
 	def toLowPloy(self, data):
 
-		vCount = len(data['vectors'])
+		vCount = len(data['vecteies'])
 		lowCount = vCount/10
 
 		flength = len(data['faces'])
