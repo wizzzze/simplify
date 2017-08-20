@@ -49,6 +49,8 @@ class QEM:
 		for i in p:
 			for j in p 
 				ppT[i][j] = p[i] * p[j];
+
+		return ppT
 		
 
 
