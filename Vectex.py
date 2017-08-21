@@ -9,6 +9,12 @@ class Vectex:
 		self.y = y
 		self.z = z
 		self.neighbor = []
+		self.mat = [
+			[0,0,0,0],
+			[0,0,0,0],
+			[0,0,0,0],
+			[0,0,0,0]
+		]
 
 	def length:
 		return sqrt(self.x * self.x + self.y * self.y + self.z * self.z);
@@ -35,3 +41,13 @@ class Vectex:
 	@staticmethod
 	def dot(p1 ,p2):
 		return p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;
+
+	def matPlus(ppT):
+		i = j = 0
+		while i < 4 :
+			while j < 4
+				self.mat[i][j] += ppT[i][j];
+				j += 1
+			i += 1
+
+				

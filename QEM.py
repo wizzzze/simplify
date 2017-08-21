@@ -15,7 +15,6 @@ class QEM:
 		reverseIndex = {}
 		while fi < flength:
 			face = data['faces'][fi];
-			print face
 			for vec in face:
 				vindex = int(vec[0])
 				if vindex in reverseIndex:
@@ -36,6 +35,12 @@ class QEM:
 			]
 		
 			ppT = self.computerPPT(face, ppT);
+			for v in face.point:
+				face.point[v].matPlus(ppT)
+
+
+		for vec in data['vecteies']:
+			
 
 
 		
@@ -43,7 +48,7 @@ class QEM:
 
 
 	def computerPPT(tri , ppT) :
-		norm = Vectex.prod(self.vecteies[tri.poin[1]].minus(self.vecteies[tri.point[0]]), self.vecteies[tri.point[2]].minus(self.vecteies[tri.point[0]]));
+		norm = Vectex.prod(self.vecteies[tri.point[1]].minus(self.vecteies[tri.point[0]]), self.vecteies[tri.point[2]].minus(self.vecteies[tri.point[0]]));
 		norm.normalize();
 		p = [norm.x, norm.y, norm.z, Vectex.dot(norm, *(tri.point[0])) * (-1)];
 		for i in p:
